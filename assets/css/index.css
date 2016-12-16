@@ -1,0 +1,363 @@
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+ 
+#loginmodal {
+  width: 300px;
+  padding: 15px 20px;
+  background: #f3f6fa;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.labelHide{
+	display:none
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #B2E3E8;
+    color: white;
+}
+
+.modal-body {
+	padding: 30px 16px;
+	margin: 0 auto;
+    text-align: center;
+}
+
+.containerButtons{
+	width: 33.33%; 
+	text-align: center; 
+	height: 200px
+}
+
+.textButtons{
+	margin-bottom: 0; 
+	display: inline-table; 
+	padding-top: 25px;
+}
+
+.containerButtons:hover {
+	background-color: #B7C9DC;
+}
+
+.containerButtons:hover{
+	color: darkslategrey;
+	
+}
+
+#imgTattoo:hover{
+	background-image: url("../images/heart_color.png");
+}
+
+#imgContact:hover{
+	background-image: url("../images/contact_color.png");
+}
+
+#imgBlog:hover{
+	background-image: url("../images/blog_color.png");
+}
+
+#imgTattoo{
+	background-image: url("../images/heart.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+    height: 64%;
+}
+
+#imgBlog{
+	background-image: url("../images/blog.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+    height: 64%;
+}
+
+#imgContact{
+	background-image: url("../images/contact.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+    height: 64%;
+}
+
+#instafeed img{
+    margin-left: 2px;
+    width: 300px;
+}
+
+.instagram{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.textSectionOne{
+	text-align: justify;
+}
+ 
+#loginform { /* no default styles */ }
+ 
+#loginform label { display: block; font-size: 1.1em; font-weight: bold; color: #7c8291; margin-bottom: 3px; }
+ 
+#socialInstagram{
+	background-image: url("../images/instagram_blanco.png");
+    width: 15%;
+    height: 80px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    opacity: 0.6;
+}
+
+.textInlineBlock{
+	display: inline-block
+}
+
+.containerSocialText{
+	display: inline-block;
+	width: 50%;
+	margin-top: 3%;
+	float: left;
+}
+
+#socialFacebook{
+	background-image: url("../images/facebook_blanco.png");
+    width: 80px;
+    height: 80px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    opacity: 0.6;
+} 
+
+#socialFacebook:hover{
+	opacity: 1;
+}
+
+#socialInstagram:hover{
+	opacity: 1;
+}
+
+.containerSocial{
+	display: block;
+}
+ 
+.txtfield { 
+  display: block;
+  width: 100%;
+  padding: 6px 5px;
+  margin-bottom: 15px;
+  font-family: 'Helvetica Neue', Helvetica, Verdana, sans-serif;
+  color: #7988a3;
+  font-size: 1.4em;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#edf3f9), to(#fff));
+  background-image: -webkit-linear-gradient(top, #edf3f9, #fff);
+  background-image: -moz-linear-gradient(top, #edf3f9, #fff);
+  background-image: -ms-linear-gradient(top, #edf3f9, #fff);
+  background-image: -o-linear-gradient(top, #edf3f9, #fff);
+  background-image: linear-gradient(top, #edf3f9, #fff);
+  border: 1px solid;
+  border-color: #abbce8 #c3cae0 #b9c8ef;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.4);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.4);
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+ 
+.txtfield:focus {
+  outline: none;
+  color: #525864;
+  border-color: #84c0ee;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 7px #96c7ec;
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 7px #96c7ec;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 7px #96c7ec;
+}
+
+#w {
+  display: block;
+  width: 750px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+ 
+#content {
+  display: block;
+  width: 100%;
+  background: #fff;
+  padding: 25px 20px;
+  padding-bottom: 35px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+
+.containerFooterSocial{
+	display: block; 
+	height: 384px;
+}
+ 
+/** custom login button **/
+.flatbtn-blu { 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  color: #edf4f9;
+  text-decoration: none;
+  background-color: #4f94cf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 12px 26px 12px 26px;
+  line-height: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.flatbtn-blu:hover {
+  color: #fff;
+  background-color: #519dde;
+}
+.flatbtn-blu:active {
+  -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow:inset 0 1px 5px rgba(0, 0, 0, 0.1);
+  box-shadow:inset 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+.googleMaps{
+	width:80%;
+	height:300px
+}
+
+@media (max-width: 980px){
+	.containerButtons{
+		width: 100%;
+	}
+	
+	#socialInstagram{
+		width: 32%;
+	}
+	
+	.containerSocialText{
+		width: 100%;
+	}
+	
+	.containerFooterSocial{
+		height: 600px;
+		margin-top: 12px;
+	}
+}
+
+@media (max-width: 680px){
+	#instafeed img{
+	    width: 140px;
+	}
+	
+	.googleMaps{
+		height: 210px;
+	}
+	
+	.containerFooterSocial {
+	    height: 500px;
+	}
+}
+
+@media (max-width: 360px){
+	#instafeed img{
+	    width: 100px;
+	}
+}

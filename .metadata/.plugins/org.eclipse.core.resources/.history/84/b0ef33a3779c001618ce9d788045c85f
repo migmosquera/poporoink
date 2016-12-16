@@ -1,0 +1,20 @@
+
+<?php
+    //$conect= mysql_connect('localhost', 'root', 'root');
+	//mysql_select_db('poporoink', $conect);
+	DEFINE ('DB_USER','root'); // El usuario por defecto es root
+	DEFINE ('DB_PSWD','root'); //nuestro servidor no tiene contraseña por eso esta sin digitar algun caracter
+	DEFINE ('DB_HOST','localhost'); // servidor
+	DEFINE ('DB_NAME','poporoink'); // nombre de la Base de Dato
+	
+	$dbcon = mysqli_connect(DB_HOST,DB_USER,DB_PSWD,DB_NAME);
+	
+	if ($dbcon){
+
+		echo "<br/>conexion exitosa";
+		
+	}else{
+		echo "error";
+	}
+	
+?>

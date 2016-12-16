@@ -1,0 +1,15 @@
+
+<?php
+    //$conect= mysql_connect('localhost', 'root', 'root');
+	//mysql_select_db('poporoink', $conect);
+	
+	$conexion=mysql_connect("localhost","root","root");
+	//$dbcon = mysqli_connect(DB_HOST,DB_USER,DB_PSWD,DB_NAME);
+	
+	//if ($dbcon){
+		//mysql_ping($dbcon);
+		//echo "<br/>conexion exitosa";
+		
+	//}
+	
+?>
