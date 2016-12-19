@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <?php
 	require_once  'controller/controllerUsers.php';
+	
 ?>
 <html>
 	<head>
@@ -51,7 +52,7 @@
 								<h2>Poporo Ink</h2>
 								<p>Bienvenidos a Poporo Ink<br />
 								Un lugar para que conozcas mi trabajo<br />
-								<a href="<?php $user->getUrlInstagram() ?>" target="_blank">Visita mi instagram</a>.</p>
+								<a href="<?php echo $user['url_instagram'] ?>" target="_blank">Visita mi instagram</a>.</p>
 							</div>
 							<a href="#two" class="more scrolly">Conoceme</a>
 					</section>
@@ -120,8 +121,8 @@
 							</header>
 							<p>Mis redes Sociales</p>
 							<div class="containerSocial" id="containerSocial">
-							  <a target="_blank" class="icon" href="<?php $user->getUrlInstagram() ?>"><div id="socialInstagram"></div></a>
-							  <a target="_blank" class="icon" href="<?php $user->getUrl_facebook() ?>"><div id="socialFacebook"></div></a>
+							  <a target="_blank" class="icon" href="<?php $user['url_instagram'] ?>"><div id="socialInstagram"></div></a>
+							  <a target="_blank" class="icon" href="<?php $user['url_facebook'] ?>"><div id="socialFacebook"></div></a>
 							</div>
 							<div class="containerFooterSocial" style="">
 								<div class="containerSocialText">
@@ -129,12 +130,12 @@
 									  	<img class="textInlineBlock" src="assets/images/phone.png" />
 								  		<p style="margin-bottom: 15px" class="textInlineBlock">Celular</p>
 									</div>
-									<p class="textInlineBlock"><?php $user->getPhone() ?></p>
+									<p class="textInlineBlock"><?php $user['phone'] ?></p>
 									<div class="containerEmail">
 									  	<img class="textInlineBlock" src="assets/images/emails.png" />
 								  		<p style="margin-bottom: 15px" class="textInlineBlock" >Email</p>
 									</div>
-								  	<p class="textInlineBlock"><?php $user->getEmail() ?></p>
+								  	<p class="textInlineBlock"><?php $user['email'] ?></p>
 								</div>
 								<div class="containerSocialText">
 								  	<p class="titleSocial">Ubicanos</p>
@@ -151,8 +152,8 @@
 					<footer id="footer">
 						<ul class="icons">
 							<!--<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>-->
-							<li><a target="_blank"  href="<?php $user->getUrl_facebook() ?>" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a target="_blank" href="<?php $user->getUrlInstagram()?>" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a target="_blank"  href="<?php $user['url_facebook'] ?>" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a target="_blank" href="<?php $user['url_instagram'] ?>" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 							<!-- <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
 							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>-->
 						</ul>

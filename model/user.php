@@ -73,8 +73,10 @@ class Users {
 	}
 
 	public function updateAndCreate() {
+		echo "guardar";
 		$conectar = new Conectar();
 		if ($this -> id) {
+			echo "modificar";
 			$query = $conectar -> prepare('UPDATE' . self::TABLA . 'SET name = :name, email = :email, url_instagram = :url_instagram, token_instagram = :token_instagram, phone = :phone WHERE id = :id');
 			$query -> bindParam(':name', $this -> name);
 			$query -> bindParam(':email', $this -> email);
@@ -97,18 +99,27 @@ class Users {
 		$conectar = null;
 	}
 
-	public static function getUser($id) {
+	public static function selectForId($id) {
 		$conectar = new Conectar();
-		$query = $conectar->prepare('SELECT * FROM user');
-		//$query->bindParam(':id', $id);
+		$query = $conectar->prepare('SELECT * FROM ' . self::TABLA . ' WHERE id = :id');
+		$query -> bindParam(':id', $id);
 		$query -> execute();
-		$data = $query->fetch(PDO::FETCH_ASSOC);
+		$data = $query->fetch();
 		
 		if ($data) {
-			return new self($data['id'], $data['name'], $data['email'], $data['url_instagram'], $data['url_facebook'], $data['phone']);
+			return $data;
 		}else{
-			echo "no encontro ningun dato";
+			return FALSE;
 		}
+	}
+
+	public static function selectAll() {
+		$conectar = new Conectar();
+		$query = $conectar->prepare('SELECT * FROM ' . self::TABLA );
+		$query -> execute();
+		$data = $query->fetchAll();
+		
+		return $data;
 	}
 
 }
