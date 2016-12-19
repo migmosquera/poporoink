@@ -60,7 +60,7 @@
 				<!-- One -->
 					<section id="two" class="wrapper alt style2">
 						<section class="spotlight">
-							<div class="image"><img src="assets/images/poporo.jpg" alt="" /></div><div class="content">
+							<div class="image"><img src="assets/images/poporoLogo.png" alt="" /></div><div class="content">
 								<h2>Poporo INK</h2>
 								<p class='textSectionOne'>Es la mejor de opcion a la hora de hacer un arte en tu cuerpo, nos especializamos en tatuajes en cualquier parte de tu cuerpo y garantizamos la calidad e higiene a la hora de hacer nuestro trabajo</p>
 							</div>
