@@ -121,8 +121,8 @@
 							</header>
 							<p>Mis redes Sociales</p>
 							<div class="containerSocial" id="containerSocial">
-							  <a target="_blank" class="icon" href="<?php $user['url_instagram'] ?>"><div id="socialInstagram"></div></a>
-							  <a target="_blank" class="icon" href="<?php $user['url_facebook'] ?>"><div id="socialFacebook"></div></a>
+							  <a target="_blank" class="icon" href="<?php echo $user['url_instagram'] ?>"><div id="socialInstagram"></div></a>
+							  <a target="_blank" class="icon" href="<?php echo $user['url_facebook'] ?>"><div id="socialFacebook"></div></a>
 							</div>
 							<div class="containerFooterSocial" style="">
 								<div class="containerSocialText">
@@ -130,12 +130,12 @@
 									  	<img class="textInlineBlock" src="assets/images/phone.png" />
 								  		<p style="margin-bottom: 15px" class="textInlineBlock">Celular</p>
 									</div>
-									<p class="textInlineBlock"><?php $user['phone'] ?></p>
+									<p class="textInlineBlock"><?php echo $user['phone'] ?></p>
 									<div class="containerEmail">
 									  	<img class="textInlineBlock" src="assets/images/emails.png" />
 								  		<p style="margin-bottom: 15px" class="textInlineBlock" >Email</p>
 									</div>
-								  	<p class="textInlineBlock"><?php $user['email'] ?></p>
+								  	<p class="textInlineBlock"><?php echo $user['email'] ?></p>
 								</div>
 								<div class="containerSocialText">
 								  	<p class="titleSocial">Ubicanos</p>
@@ -152,8 +152,8 @@
 					<footer id="footer">
 						<ul class="icons">
 							<!--<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>-->
-							<li><a target="_blank"  href="<?php $user['url_facebook'] ?>" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a target="_blank" href="<?php $user['url_instagram'] ?>" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a target="_blank"  href="<?php echo $user['url_facebook'] ?>" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a target="_blank" href="<?php echo $user['url_instagram'] ?>" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 							<!-- <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
 							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>-->
 						</ul>
