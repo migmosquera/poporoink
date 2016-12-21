@@ -20,11 +20,11 @@ function View() {
 	
 	var modal = document.getElementById('myModal');
 	var $body = $('body');
-	$("#myBtn").on("click", function(){
+	/*$("#myBtn").on("click", function(){
 		 modal.style.display = "block";
 		 $("body").removeClass('is-menu-visible');
 	});
-	
+	*/
 	$("#closet").on("click", function(){
 		modal.style.display = "none";
 	});
@@ -39,12 +39,8 @@ function View() {
 	        modal.style.display = "none";
 	    };
 	};
+
 	
-	AOS.init({
-		offset: 200,
-      	duration: 1000,
-      	delay: 300
-	});
 }
 
 function Controller() {

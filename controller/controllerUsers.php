@@ -12,6 +12,4 @@ $user = Users::selectForId(2);
 		echo "no se a encontrado ninguna persona";
 	}
 
-require_once  'index.php';
-
 ?>

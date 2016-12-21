@@ -1,8 +1,28 @@
 <?php
-	require_once  '../conexion/conexion.php';
+	
 	session_start();
 	
 	if ($_SERVER["REQUEST_METHOD"] == "POST"){
+		
+		$username = trim($_POST['username']);
+		$pass = trim($_POST['password']);
+		$user;
+		
+		
+	}	
+	/*$username = trim($_POST['username']);
+	$pass = trim($_POST['password']);
+	$errorMsj = 'hola miguel';
+	return $errorMsj;
+	
+	echo "paso por aqui";
+	require_once  'index.php';*/
+	
+	/*$username = $username = trim($_POST['username']);
+	$pass = $pass = trim($_POST['password']);
+	$login = Users::login($username, $pass)*/
+	
+	/*if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		$username = mysqli_real_escape_string(Conectar::conexion(),$_POST['username']);
 		$pass = mysqli_real_escape_string(Conectar::conexion(),$_POST['password']);
 		
@@ -20,6 +40,6 @@
 	   	}
 			
 		
-	}
+	}*/
 
 ?>

@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <?php
 	require_once  'controller/controllerUsers.php';
-	
 ?>
 <html>
 	<head>
@@ -24,7 +23,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Poporo Ink</a></h1>
+						<h1><a href="index.php">Poporo Ink</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
@@ -34,7 +33,7 @@
 											<!--<li><a href="index.html">Home</a></li>
 											<li><a href="generic.html">Contactame</a></li>
 											<li><a href="elements.html">Galeria</a></li>-->
-											<li><a id="myBtn" style="cursor: pointer;">Login</a></li>
+											<li><a id="myBtn" href="login.php" style="cursor: pointer;">Login</a></li>
 										</ul>
 									</div>
 								</li>
@@ -165,21 +164,20 @@
 			</div>
 			<!-- Modal -->
 			
-			  <div id="myModal" class="modal">
+			  <!--<div id="myModal" class="modal">-->
 				  <!-- Modal content -->
-				  <div class="modal-content">
+				  <!--<div class="modal-content">
 				    <div class="modal-header">
 				      <span id="closet" class="close">×</span>
 				      <h2>Login</h2>
 				    </div>
-				    <form action="controller/login.php" method="post" accept-charset="utf-8">
+				    <form action="controller/login.php" method="post" name="loginUser" accept-charset="utf-8">
 					    <div class="modal-body">
 					      	<p style="color: #000000; margin-bottom: 10px">Ingresa Usuario</p>
 					      	<input type="text"required="required" id="username" name="username" style="color: #000000" placeholder="Usuario"/>	
 					      	<p style="color: #000000; margin-bottom: 10px">Ingresa Clave</p>
-					    	<input type="password" required="required" id="password" name="password" style="color: #000000" placeholder="Clave"/>					    	
-					    	<input type="hidden" name="data_user" value="<?php foreach ($data as $dato) { echo $dato['email']; }?>" id="data_user"/>
-					    	<input type="hidden" name="data_pass" value="<?php foreach ($data as $dato) { echo $dato['password']; }?>" id="data_pass"/>
+					    	<input type="password" required="required" id="password" name="password" style="color: #000000" placeholder="Clave"/>
+					    	<div id="errorMsj"><?php echo $errorMsj; ?></div>					    	
 					    </div>
 					    <div id="footer-modal" style="text-align: center; padding-bottom: 15px">
 						  	<input type="button" class="btn btn-danger" name="closeBtn" value="Cerrar" id="closeBtn"/>
@@ -188,7 +186,7 @@
 					</form>
 					
 				  </div>
-			  </div>	  
+			  </div>-->	  
 			
 		<!-- Scripts -->
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0YRxhZY0MuH2yz1dHp0-E3PH6UgISLcQ&callback=initMap"></script>
