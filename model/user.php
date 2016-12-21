@@ -86,7 +86,7 @@ class Users {
 			$query -> bindParam(':id', $this -> id);
 			$query -> execute();
 		} else {
-			$query = $conectar -> prepare('INSERT INTO ' . self::TABLA . ' (name, email, password, url_instagram, url_facebook, phone) VALUES(:name, :email, :password, :url_instagram, :url_facebook, :phone)');
+			$query = $conectar -> prepare('INSERT INTO ' . self::TABLA . ' (name, email, password, url_instagram, url_facebook, ) VALUES(:name, :email, :password, :url_instagram, :url_facebook, :phone)');
 			$query -> bindParam(':name', $this -> name);
 			$query -> bindParam(':email', $this -> email);
 			$query -> bindParam(':password', $this -> password);
@@ -101,25 +101,44 @@ class Users {
 
 	public static function selectForId($id) {
 		$conectar = new Conectar();
-		$query = $conectar->prepare('SELECT * FROM ' . self::TABLA . ' WHERE id = :id');
+		$query = $conectar -> prepare('SELECT * FROM ' . self::TABLA . ' WHERE id = :id');
 		$query -> bindParam(':id', $id);
 		$query -> execute();
-		$data = $query->fetch();
-		
+		$data = $query -> fetch();
+
 		if ($data) {
-			return $data;
-		}else{
+			return new self($data['name'], $data['email'], $data['password'], $data['url_instagram'], $data['url_facebook'], $data['phone'], $id);
+		} else {
 			return FALSE;
 		}
+		$conectar = null;
 	}
 
 	public static function selectAll() {
 		$conectar = new Conectar();
-		$query = $conectar->prepare('SELECT * FROM ' . self::TABLA );
+		$query = $conectar -> prepare('SELECT * FROM ' . self::TABLA);
 		$query -> execute();
-		$data = $query->fetchAll();
-		
+		$data = $query -> fetchAll();
+
 		return $data;
+		$conectar = null;
+	}
+
+	public static function loginUser($username,$pass) {
+
+		$conectar = new Conectar();
+		$query = $conectar -> prepare('SELECT * FROM ' . self::TABLA . ' WHERE email = :email AND password = md5(:pass)');
+		$query -> bindParam(':email', $username);
+		$query -> bindParam(':pass', $pass);
+		$query -> execute();
+		$data = $query -> fetch();
+		if ($data) {
+			return new self($data['name'], $data['email'], $data['password'], $data['url_instagram'], $data['url_facebook'], $data['phone'], $data['id']);
+		} else {
+			return FALSE;
+		}
+		$conectar = null;
+
 	}
 
 }

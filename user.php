@@ -1,8 +1,6 @@
 <!DOCTYPE HTML>
 <?php
-	
-	require_once  'controller/login.php';
-	echo $users;
+	session_start();
 ?>
 <html>
 	<head>
@@ -11,6 +9,6 @@
 	</head>
 	<body class="landing">
 		<p>el usuario se a logeado</p>
-		<p><?php echo $users ;?></p>
+		<p><?php echo $_SESSION['id'] ;?></p>
 	</body>
 </html>

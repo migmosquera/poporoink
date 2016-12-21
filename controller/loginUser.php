@@ -1,15 +1,19 @@
 <?php
-	
+	include_once "model/user.php";
 	session_start();
-	
-	if ($_SERVER["REQUEST_METHOD"] == "POST"){
-		
-		$username = trim($_POST['username']);
-		$pass = trim($_POST['password']);
-		$user;
-		
-		
-	}	
+	$msjError = '';
+	if(isset($_POST['btnLogin'])){
+		$username = $_POST['username'];
+		$pass = $_POST['password'];
+		$user = Users::loginUser($username,$pass);
+		if($user){
+			$_SESSION['id']=$user->getId();
+			header('location: user.php');
+		}else{
+			$msjError = 'Clave o Usuario incorrecto';
+			return $msjError;
+		}
+	}
 	/*$username = trim($_POST['username']);
 	$pass = trim($_POST['password']);
 	$errorMsj = 'hola miguel';
