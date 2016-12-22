@@ -19,7 +19,7 @@ class Users {
 	}
 
 	public function setName($name) {
-		$this -> nombre = $name;
+		$this -> name = $name;
 	}
 
 	public function getPassword() {
@@ -42,7 +42,7 @@ class Users {
 		return $this -> url_instagram;
 	}
 
-	public function setUrlInstagram($url_instagram) {
+	public  function setUrlInstagram($url_instagram) {
 		$this -> url_instagram = $url_instagram;
 	}
 
@@ -72,31 +72,34 @@ class Users {
 		$this -> phone = $phone;
 	}
 
-	public function updateAndCreate() {
-		echo "guardar";
+	public function register() {
 		$conectar = new Conectar();
-		if ($this -> id) {
-			echo "modificar";
-			$query = $conectar -> prepare('UPDATE' . self::TABLA . 'SET name = :name, email = :email, url_instagram = :url_instagram, token_instagram = :token_instagram, phone = :phone WHERE id = :id');
-			$query -> bindParam(':name', $this -> name);
-			$query -> bindParam(':email', $this -> email);
-			$query -> bindParam(':url_instagram', $this -> url_instagram);
-			$query -> bindParam(':token_instagram', $this -> token_instagram);
-			$query -> bindParam(':phone', $this -> phone);
-			$query -> bindParam(':id', $this -> id);
-			$query -> execute();
-		} else {
-			$query = $conectar -> prepare('INSERT INTO ' . self::TABLA . ' (name, email, password, url_instagram, url_facebook, ) VALUES(:name, :email, :password, :url_instagram, :url_facebook, :phone)');
-			$query -> bindParam(':name', $this -> name);
-			$query -> bindParam(':email', $this -> email);
-			$query -> bindParam(':password', $this -> password);
-			$query -> bindParam(':url_instagram', $this -> url_instagram);
-			$query -> bindParam(':url_facebook', $this -> url_facebook);
-			$query -> bindParam(':phone', $this -> phone);
-			$query -> execute();
-			$this -> id = $conectar -> lastInsertId();
-		}
+
+		$query = $conectar -> prepare('INSERT INTO ' . self::TABLA . ' (name, email, password, url_instagram, url_facebook, ) VALUES(:name, :email, :password, :url_instagram, :url_facebook, :phone)');
+		$query -> bindParam(':name', $this -> name);
+		$query -> bindParam(':email', $this -> email);
+		$query -> bindParam(':password', $this -> password);
+		$query -> bindParam(':url_instagram', $this -> url_instagram);
+		$query -> bindParam(':url_facebook', $this -> url_facebook);
+		$query -> bindParam(':phone', $this -> phone);
+		$query -> execute();
+		$this -> id = $conectar -> lastInsertId();
+
 		$conectar = null;
+	}
+
+	public function update($id) {
+		$conectar = new Conectar();
+		$query = $conectar -> prepare('UPDATE' . self::TABLA . 'SET name = :name, email = :email, url_instagram = :url_instagram, url_facebook = :url_facebook, phone = :phone WHERE id = :id');
+		$query -> bindParam(':name', $this->getName());
+		$query -> bindParam(':email', $this->getEmail());
+		$query -> bindParam(':url_instagram', $this->getUrlInstagram());
+		$query -> bindParam(':url_facebook', $this->getUrl_facebook());
+		$query -> bindParam(':phone', $this->getPhone());
+		$query -> bindParam(':id', $id);
+		$query -> execute();
+		$conectar = null;
+		
 	}
 
 	public static function selectForId($id) {
@@ -124,7 +127,7 @@ class Users {
 		$conectar = null;
 	}
 
-	public static function loginUser($username,$pass) {
+	public static function loginUser($username, $pass) {
 
 		$conectar = new Conectar();
 		$query = $conectar -> prepare('SELECT * FROM ' . self::TABLA . ' WHERE email = :email AND password = md5(:pass)');

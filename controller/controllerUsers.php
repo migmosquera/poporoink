@@ -1,7 +1,4 @@
 <?php
-
-//require_once("model/user.php");
-
 require_once  'model/user.php';
 
 $user = Users::selectForId(1);

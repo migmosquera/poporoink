@@ -1,11 +1,12 @@
 <!DOCTYPE HTML>
 <?php
+	include 'controller/searchUser.php';
 	include_once 'controller/updateUser.php';
 	include_once 'controller/logout.php';
 ?>
 <html>
 	<head>
-		<title>Generic - Spectral by HTML5 UP</title>
+		<title>User</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/user.css" />	
@@ -52,6 +53,7 @@
 									 	<p>Link de Instagram del Tatuador</p>
 									 	<input style="color: #000000" type="text" name="instagram" value="<?php echo $user->getUrlInstagram() ?>" id="instagram"/>	
 								   		<button type="submit" name="updateUser" id="updateUser" ><span>Guardar</span></button>
+								   		<p><?php $msj ?></p>	
 									</div>
 								</form>
 							</div>
