@@ -4,7 +4,7 @@
 
 require_once  'model/user.php';
 
-$user = Users::selectForId(2);
+$user = Users::selectForId(1);
 
 	if ($user) {
 		return $user;

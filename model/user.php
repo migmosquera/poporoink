@@ -8,7 +8,7 @@ class Users {
 	private $url_instagram;
 	private $url_facebook;
 	private $phone;
-	const TABLA = 'user';
+	const TABLA = 'users';
 
 	public function getId() {
 		return $this -> id;

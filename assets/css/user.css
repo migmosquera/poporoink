@@ -1,0 +1,39 @@
+#main > header{
+	padding: 5em 3em 3em 3em !important;
+}
+
+.formUpdate{
+	width: 100%;
+  	text-align: center;
+}
+
+.containerUser{
+	width: 90%;
+  	background: #ffffff;
+  	margin: 0 auto 3% auto;
+  	min-height: 100px;
+  	border: 1px solid #237c26;
+  	padding: 10px;
+  	border-radius: 5px;
+}
+
+.contentTitle{
+	height: 46px;
+  	width: 70%;
+  	font-size: 21px;
+  	display: table;
+  	margin: auto;
+  	margin-top: -35px;
+  	background: #ffffff;
+  	text-align: center;
+}
+
+.titleUser{
+	display: table-cell;
+  	vertical-align: middle;
+  	font-weight: 400;
+}
+
+@media screen and (max-width: 1680px){
+	padding: 5em 3em 3em 3em !important;
+}
