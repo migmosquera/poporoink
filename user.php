@@ -2,7 +2,6 @@
 <?php
 	include 'controller/searchUser.php';
 	include_once 'controller/updateUser.php';
-	include_once 'controller/logout.php';
 ?>
 <html>
 	<head>
@@ -19,11 +18,11 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">POPOROINK</a></h1>
+						<h1><a href="controller/logout.php">POPOROINK</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="">
-									<a  class=""><span>Salir</span></a>
+									<a href="controller/logout.php"  class=""><span>Salir</span></a>
 								</li>
 							</ul>
 						</nav>
@@ -41,18 +40,23 @@
 										<div class="contentTitle">
 											<h4 class="titleUser">Datos del Tatuador</h4>  
 										</div>
-										<input type="hidden" name="id" value="<?php echo $user->getId() ?>" id="id"/>
-									 	<p>Nombre del Tatuador</p>
-									 	<input style="color: #000000" type="text" name="name" value="<?php echo $user->getName() ?>" id="name"/>
-									 	<p>Email del Tatuador</p>
-									 	<input style="color: #000000" type="text" name="email" value="<?php echo $user->getEmail() ?>" id="email"/>
-									 	<p>Telefono del Tatuador</p>
-									 	<input style="color: #000000" type="text" name="phone" value="<?php echo $user->getPhone() ?>" id="phone"/>
-									 	<p>Link de Facebook del Tatuador</p>
-									 	<input style="color: #000000" type="text" name="facebook" value="<?php echo $user->getUrl_facebook() ?>" id="facebook"/>
-									 	<p>Link de Instagram del Tatuador</p>
-									 	<input style="color: #000000" type="text" name="instagram" value="<?php echo $user->getUrlInstagram() ?>" id="instagram"/>	
-								   		<button type="submit" name="updateUser" id="updateUser" ><span>Guardar</span></button>
+										<div id="containerLeft" class="subContainer">
+										  	<input type="hidden" name="id" value="<?php echo $user->getId() ?>" id="id"/>
+										 	<p style="margin-bottom: 10px;">Nombre del Tatuador</p>
+										 	<input style="color: #000000;margin-bottom: 20px;" type="text" name="name" value="<?php echo $user->getName() ?>" id="name"/>
+										 	<p style="margin-bottom: 10px;">Email del Tatuador</p>
+										 	<input style="color: #000000;margin-bottom: 20px;" type="text" name="email" value="<?php echo $user->getEmail() ?>" id="email"/>
+										 	<p style="margin-bottom: 10px;">Telefono del Tatuador</p>
+										 	<input style="color: #000000;margin-bottom: 20px;" type="text" name="phone" value="<?php echo $user->getPhone() ?>" id="phone"/>
+										</div>
+										<div id="containerRight" class="subContainerRight">
+										  	<p style="margin-bottom: 10px;">Facebook del Tatuador</p>
+									 		<input class="inputClass" type="text" name="facebook" value="<?php echo $user->getUrl_facebook() ?>" id="facebook"/>
+									 		<p style="margin-bottom: 10px;">Instagram del Tatuador</p>
+									 		<input class="inputClass" type="text" name="instagram" value="<?php echo $user->getUrlInstagram() ?>" id="instagram"/>
+										</div>
+									 		
+								   		<button type="submit" class="myButton" name="updateUser" id="updateUser" ><span>Guardar</span></button>
 								   		<p><?php $msj ?></p>	
 									</div>
 								</form>

@@ -90,7 +90,8 @@ class Users {
 
 	public function update($id) {
 		$conectar = new Conectar();
-		$query = $conectar -> prepare('UPDATE' . self::TABLA . 'SET name = :name, email = :email, url_instagram = :url_instagram, url_facebook = :url_facebook, phone = :phone WHERE id = :id');
+		
+		$query = $conectar -> prepare('UPDATE users SET name = :name, email = :email, url_instagram = :url_instagram, url_facebook = :url_facebook, phone = :phone WHERE id = :id');
 		$query -> bindParam(':name', $this->getName());
 		$query -> bindParam(':email', $this->getEmail());
 		$query -> bindParam(':url_instagram', $this->getUrlInstagram());
