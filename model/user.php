@@ -8,6 +8,7 @@ class Users {
 	private $url_instagram;
 	private $url_facebook;
 	private $phone;
+	private $username;
 	const TABLA = 'users';
 
 	public function getId() {
@@ -61,8 +62,16 @@ class Users {
 	public function setPhone($phone) {
 		$this -> phone = $phone;
 	}
+	
+	public function getUsername() {
+		return $this -> username;
+	}
 
-	public function __construct($name, $email, $password, $url_instagram, $url_facebook, $phone, $id = null) {
+	public function setUsername($username) {
+		$this -> username = $username;
+	}
+
+	public function __construct($name, $email, $password, $url_instagram, $url_facebook, $phone, $username, $id = null) {
 		$this -> id = $id;
 		$this -> name = $name;
 		$this -> password = $password;
@@ -70,6 +79,7 @@ class Users {
 		$this -> url_instagram = $url_instagram;
 		$this -> url_facebook = $url_facebook;
 		$this -> phone = $phone;
+		$this -> username = $username;
 	}
 
 	public function register() {
@@ -91,12 +101,13 @@ class Users {
 	public function update($id) {
 		$conectar = new Conectar();
 		
-		$query = $conectar -> prepare('UPDATE users SET name = :name, email = :email, url_instagram = :url_instagram, url_facebook = :url_facebook, phone = :phone WHERE id = :id');
+		$query = $conectar -> prepare('UPDATE users SET name = :name, email = :email, url_instagram = :url_instagram, url_facebook = :url_facebook, phone = :phone, username = :username WHERE id = :id');
 		$query -> bindParam(':name', $this->getName());
 		$query -> bindParam(':email', $this->getEmail());
 		$query -> bindParam(':url_instagram', $this->getUrlInstagram());
 		$query -> bindParam(':url_facebook', $this->getUrl_facebook());
 		$query -> bindParam(':phone', $this->getPhone());
+		$query -> bindParam(':username', $this->getUsername());
 		$query -> bindParam(':id', $id);
 		$query -> execute();
 		$conectar = null;
@@ -131,13 +142,14 @@ class Users {
 	public static function loginUser($username, $pass) {
 
 		$conectar = new Conectar();
-		$query = $conectar -> prepare('SELECT * FROM ' . self::TABLA . ' WHERE email = :email AND password = md5(:pass)');
-		$query -> bindParam(':email', $username);
+		$query = $conectar -> prepare('SELECT * FROM ' . self::TABLA . ' WHERE username = :username AND password = md5(:pass)');
+		$query -> bindParam(':username', $username);
 		$query -> bindParam(':pass', $pass);
 		$query -> execute();
 		$data = $query -> fetch();
 		if ($data) {
-			return new self($data['name'], $data['email'], $data['password'], $data['url_instagram'], $data['url_facebook'], $data['phone'], $data['id']);
+			echo "paso por aqui";
+			return new self($data['name'], $data['email'], $data['password'], $data['url_instagram'], $data['url_facebook'], $data['phone'], $data['username'], $data['id']);
 		} else {
 			return FALSE;
 		}

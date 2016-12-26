@@ -7,6 +7,7 @@
 		$pass = $_POST['password'];
 		$user = Users::loginUser($username,$pass);
 		if($user){
+			echo $user->getId();
 			$_SESSION['id']=$user->getId();
 			header('location: user.php');
 		}else{

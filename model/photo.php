@@ -1,7 +1,7 @@
 <?php
 require_once 'conexion/conexion.php';
 require_once 'model/user.php';
-class Users {
+class Photo {
 	private $id;
 	private $photo;
 	private $id_user;
@@ -40,7 +40,19 @@ class Users {
 		$this -> date_photo = $date_photo;
 	}
 
-	
+	public function functionName($ruta,$idUser)
+	{
+		$conectar = new Conectar();
+
+		$query = $conectar -> prepare('INSERT INTO ' . self::TABLA . ' (photo,idUser,datePhoto) VALUES(:photo, :idUser, :datePhoto)');
+		$query -> bindParam(':photo', $ruta);
+		$query -> bindParam(':idUser', $idUser);
+		$query -> bindParam(':datePhoto', $this -> password);
+		$query -> execute();
+		$this -> id = $conectar -> lastInsertId();
+
+		$conectar = null;	
+	}
 
 }
 ?>
