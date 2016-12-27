@@ -3,6 +3,7 @@
 	include 'controller/searchUser.php';
 	include_once 'controller/updateUser.php';
 	include_once 'controller/uploadImage.php';
+	include_once 'controller/showAllPhoto.php';
 ?>
 <html>
 	<head>
@@ -43,7 +44,7 @@
 										</div>
 										<div id="containerLeft" class="subContainer">
 										  	<input type="hidden" name="id" value="<?php echo $user->getId() ?>" id="id"/>
-										  	<input type="hidden" name="id" value="<?php echo $user->getUsername() ?>" id="id"/>
+										  	<input type="hidden" name="username" value="<?php echo $user->getUsername() ?>" id="username"/>
 										 	<p style="margin-bottom: 10px;">Nombre del Tatuador</p>
 										 	<input style="color: #000000;margin-bottom: 20px;" type="text" name="name" value="<?php echo $user->getName() ?>" id="name"/>
 										 	<p style="margin-bottom: 10px;">Email del Tatuador</p>
@@ -59,7 +60,7 @@
 										</div>
 									 		
 								   		<button type="submit" class="myButton" name="updateUser" id="updateUser" ><span>Guardar</span></button>
-								   		<p><?php $msj ?></p>	
+								   		<p><?php echo $msj ?></p>	
 									</div>
 								</form>
 							</div>
@@ -67,14 +68,38 @@
 						<section class="wrapper style5">
 							<div class="inner">
 								<form action="" method="post" enctype="multipart/form-data" class="formUpdate">
+									<input type="hidden" name="id" value="<?php echo $user->getId() ?>" id="id"/>
 									<div class="containerUser">
 										<div class="contentTitle">
 											<h4 class="titleUser">Subir Imagen</h4>  
 										</div>
-											<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+											<input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
 									 		<input type="file" name="fileToUpload" id="fileToUpload">	
 								   			<button type="submit" class="myButton" name="fileUpload" id="fileUpload" ><span>Subir</span></button>
-								   			
+								   			<p><?php echo $msjPhoto ?></p>	
+									</div>
+								</form>
+							</div>
+						</section>
+						<section class="wrapper style5">
+							<div class="inner">
+								<form action="" method="post" enctype="multipart/form-data" class="formUpdate">
+									<div  class="containerUser">
+										<div class="contentTitle">
+											<h4 class="titleUser">Fotos Subida</h4> 
+										</div>	
+										<div id="containerPhotoAll">
+										  	<?php foreach($photo as $item): ?>
+												<div id="containerPhoto_<?php echo $item['id'] ?>" style="max-width: 200px; width: 100%; display: inline-block; text-align: center; margin-right: 10px; vertical-align: top;">
+											       	<img id="imagenUser_<?php echo $item['id'] ?>" style="height:210px; max-width: 200px" src=" <?php echo $item['photo'] ?>" alt="" />
+											       	<div id="containerMsjBorrar_<?php echo $item['id'] ?>" style="height:210px; max-width: 200px" class="labelHide" >
+											       		<p style="height:210px; max-width: 200px; margin: 0">Deseas Elminiar la Imagen</p>	
+											       	</div>
+											    </div>
+											<?php endforeach; ?>  
+										</div>
+										
+	
 									</div>
 								</form>
 							</div>
@@ -89,6 +114,7 @@
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<script src="assets/js/user.js"></script>
 			<script src="assets/js/main.js"></script>
 
 	</body>

@@ -110,6 +110,7 @@ class Users {
 		$query -> bindParam(':username', $this->getUsername());
 		$query -> bindParam(':id', $id);
 		$query -> execute();
+		return 'el usuario se a modificado';
 		$conectar = null;
 		
 	}
@@ -122,7 +123,7 @@ class Users {
 		$data = $query -> fetch();
 
 		if ($data) {
-			return new self($data['name'], $data['email'], $data['password'], $data['url_instagram'], $data['url_facebook'], $data['phone'], $id);
+			return new self($data['name'], $data['email'], $data['password'], $data['url_instagram'], $data['url_facebook'], $data['phone'], $data['username'], $id);
 		} else {
 			return FALSE;
 		}
@@ -148,7 +149,6 @@ class Users {
 		$query -> execute();
 		$data = $query -> fetch();
 		if ($data) {
-			echo "paso por aqui";
 			return new self($data['name'], $data['email'], $data['password'], $data['url_instagram'], $data['url_facebook'], $data['phone'], $data['username'], $data['id']);
 		} else {
 			return FALSE;

@@ -1,6 +1,5 @@
 <?php
 require_once 'conexion/conexion.php';
-require_once 'model/user.php';
 class Photo {
 	private $id;
 	private $photo;
@@ -40,19 +39,30 @@ class Photo {
 		$this -> date_photo = $date_photo;
 	}
 
-	public function functionName($ruta,$idUser)
+	public static function registerPhoto($photo,$idUser)
 	{
 		$conectar = new Conectar();
-
-		$query = $conectar -> prepare('INSERT INTO ' . self::TABLA . ' (photo,idUser,datePhoto) VALUES(:photo, :idUser, :datePhoto)');
-		$query -> bindParam(':photo', $ruta);
+		$date_upload = date('Y-m-d'.' h:i:s');
+		$query = $conectar -> prepare('INSERT INTO ' . self::TABLA . ' (photo,idUser,date_photo) VALUES(:photo, :idUser, :datePhoto)');
+		$query -> bindParam(':photo', $photo);
 		$query -> bindParam(':idUser', $idUser);
-		$query -> bindParam(':datePhoto', $this -> password);
+		$query -> bindParam(':datePhoto', $date_upload);
 		$query -> execute();
-		$this -> id = $conectar -> lastInsertId();
-
 		$conectar = null;	
+		return TRUE;
 	}
+	
+	public static function allPhoto()
+	{
+		$conectar = new Conectar();
+		$query = $conectar -> prepare('SELECT * FROM ' . self::TABLA . ' ORDER BY date_photo' );
+		$query -> execute();
+		$data = $query -> fetchAll();
+		return $data;
+		$conectar = null;
+	}
+	
+
 
 }
 ?>
