@@ -31,8 +31,8 @@
 									<div id="menu">
 										<ul>
 											<!--<li><a href="index.html">Home</a></li>
-											<li><a href="generic.html">Contactame</a></li>
-											<li><a href="elements.html">Galeria</a></li>-->
+											<li><a href="generic.html">Contactame</a></li>-->
+											<li><a href="photoGallery.php">Galeria</a></li>
 											<li><a id="myBtn" href="login.php" style="cursor: pointer;">Login</a></li>
 										</ul>
 									</div>
@@ -72,7 +72,7 @@
 						</section>
 						<section class="spotlight">
 							<div class="containerButtons">
-								<a href="" style="text-decoration:none; ">
+								<a href="photoGallery.php" style="text-decoration:none; ">
 									<div style="width: 99%; margin: 0 auto; height: 100%;">
 										<p class="textButtons">Visita la Galeria de Tatuajes</p>
 										<div id="imgTattoo"></div>

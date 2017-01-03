@@ -4,14 +4,15 @@
 	include_once 'controller/updateUser.php';
 	include_once 'controller/uploadImage.php';
 	include_once 'controller/showAllPhoto.php';
+	include_once 'controller/deletePhoto.php';
 ?>
 <html>
 	<head>
 		<title>User</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/user.css" />	
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/user.css" />	
 	</head>
 	<body>
 
@@ -42,7 +43,9 @@
 										<div class="contentTitle">
 											<h4 class="titleUser">Datos del Tatuador</h4>  
 										</div>
+										<p style="background-color: #DAECDE;width: 80%;  margin: 0 auto;"  ><?php echo $msj ?></p>
 										<div id="containerLeft" class="subContainer">
+											
 										  	<input type="hidden" name="id" value="<?php echo $user->getId() ?>" id="id"/>
 										  	<input type="hidden" name="username" value="<?php echo $user->getUsername() ?>" id="username"/>
 										 	<p style="margin-bottom: 10px;">Nombre del Tatuador</p>
@@ -60,7 +63,7 @@
 										</div>
 									 		
 								   		<button type="submit" class="myButton" name="updateUser" id="updateUser" ><span>Guardar</span></button>
-								   		<p><?php echo $msj ?></p>	
+								   			
 									</div>
 								</form>
 							</div>
@@ -73,10 +76,12 @@
 										<div class="contentTitle">
 											<h4 class="titleUser">Subir Imagen</h4>  
 										</div>
+										<p style="background-color: #DAECDE;width: 80%;  margin: 0 auto; margin-bottom: 15px" ><?php echo $msjPhoto ?></p>	
 											<input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
+											<p id="imageContainer" class="imagenContainer" ></p>
 									 		<input type="file" name="fileToUpload" id="fileToUpload">	
 								   			<button type="submit" class="myButton" name="fileUpload" id="fileUpload" ><span>Subir</span></button>
-								   			<p><?php echo $msjPhoto ?></p>	
+								   			
 									</div>
 								</form>
 							</div>
@@ -89,17 +94,20 @@
 											<h4 class="titleUser">Fotos Subida</h4> 
 										</div>	
 										<div id="containerPhotoAll">
-										  	<?php foreach($photo as $item): ?>
+											<form action="" id="formDeletePhoto" name="formDeletePhoto" method="post" accept-charset="utf-8">
+											 <?php foreach($photo as $item): ?>
 												<div id="containerPhoto_<?php echo $item['id'] ?>" style="max-width: 200px; width: 100%; display: inline-block; text-align: center; margin-right: 10px; vertical-align: top;">
 											       	<img id="imagenUser_<?php echo $item['id'] ?>" style="height:210px; max-width: 200px" src=" <?php echo $item['photo'] ?>" alt="" />
-											       	<div id="containerMsjBorrar_<?php echo $item['id'] ?>" style="height:210px; max-width: 200px" class="labelHide" >
-											       		<p style="height:210px; max-width: 200px; margin: 0">Deseas Elminiar la Imagen</p>	
+											       	<div id="containerMsjBorrar_<?php echo $item['id'] ?>" style="height:210px; max-width: 200px;border: 1px solid #74AD83; border-radius: 5px;" class="labelHide" >
+											       		<p style=" max-width: 200px; margin: 0">Deseas Elminiar la Imagen</p>
+											       		<button class="buttonYEsDeletePhoto" type="button" name="<?php echo $item['id'] ?>" id="deletePhoto_<?php echo $item['id'] ?>" ><span>Si</span></button>
+											       		<p class="buttonNotDeletePhoto" name="notDeletePhoto" id="notDeletePhoto" >No</button>
+											       		<input type="hidden" name="id" value="<?php echo $item['id'] ?>" id="id"/>		
 											       	</div>
 											    </div>
 											<?php endforeach; ?>  
+											</form>
 										</div>
-										
-	
 									</div>
 								</form>
 							</div>
@@ -114,8 +122,9 @@
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/user.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/user.js"></script>
+			
 
 	</body>
 </html>
