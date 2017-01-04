@@ -61,8 +61,6 @@ class Photo {
 		return $data;
 		$conectar = null;
 	}
-	
-
 
 }
 ?>

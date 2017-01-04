@@ -100,14 +100,18 @@
 											       	<img id="imagenUser_<?php echo $item['id'] ?>" style="height:210px; max-width: 200px" src=" <?php echo $item['photo'] ?>" alt="" />
 											       	<div id="containerMsjBorrar_<?php echo $item['id'] ?>" style="height:210px; max-width: 200px;border: 1px solid #74AD83; border-radius: 5px;" class="labelHide" >
 											       		<p style=" max-width: 200px; margin: 0">Deseas Elminiar la Imagen</p>
-											       		<button class="buttonYEsDeletePhoto" type="button" name="<?php echo $item['id'] ?>" id="deletePhoto_<?php echo $item['id'] ?>" ><span>Si</span></button>
+											       		<button class="buttonYEsDeletePhoto" type="button"  name="<?php echo $item['id'] ?>" id="deletePhoto" ><span>Si</span></button>
 											       		<p class="buttonNotDeletePhoto" name="notDeletePhoto" id="notDeletePhoto" >No</button>
-											       		<input type="hidden" name="id" value="<?php echo $item['id'] ?>" id="id"/>		
+											       		<input class="inputHidden" type="hidden" lang="<?php echo $item['id'] ?>" name="idPhoto_<?php echo $item['id'] ?>"  id="idPhoto_<?php echo $item['id'] ?>" value=""  />
+											       		
 											       	</div>
+											      
 											    </div>
+											    
 											<?php endforeach; ?>  
 											</form>
 										</div>
+										<div id="status"></div>	
 									</div>
 								</form>
 							</div>

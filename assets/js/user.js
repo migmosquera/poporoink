@@ -17,6 +17,7 @@ function View() {
     
    
    	var containerPhoto = document.getElementById('containerPhotoAll').children;
+   	
 	for (var i = 0; i < containerPhoto.length; i++) {
 		var childrenContainerPhoto = $(containerPhoto[i])[0].id;
 		var childrenContainerError = $(containerPhoto[i])[0].children;
@@ -24,15 +25,17 @@ function View() {
 		var deleteM = $("#"+msjDelete)[0].id;
 		var deleteP = $("#"+deleteM)[0].id;		
 		var imageId = childrenContainerError[0].id;
-	    var buttonDelete = childrenContainerError[1].children[1];
+	   	var buttonDelete = childrenContainerError[1].children[1];
 	    $("#"+childrenContainerPhoto).on("mouseover", {
              msjErro: deleteP,
-             img:  imageId
+             img:  imageId,
+             id: buttonDelete.name
         }, controller.showContainerBottons);
 
         $("#"+childrenContainerPhoto).on("mouseout", {
              msjErro: deleteP,
-             img:  imageId  
+             img:  imageId,
+             id: buttonDelete.name
         }, controller.showContainerBottons);
         
         $(buttonDelete).on("click", {
@@ -75,34 +78,48 @@ function Controller() {
     	if ($("#"+event.data.msjErro).hasClass('labelHide')){
     		$("#"+event.data.msjErro).removeClass('labelHide');	
     		$("#"+event.data.img).addClass('labelHide');	
+    		//console.log(event.data.id);
+			//$("#idPhoto").val(event.data.id);
     	}else{
     		$("#"+event.data.msjErro).addClass('labelHide');
     		$("#"+event.data.img).removeClass('labelHide');
+    		//$("#idPhoto").val('');
     	}
     	
     };
     
     this.deletePhoto = function(event){
     	console.log(event.data.id);
-    	 var data = {
-                "id" : event.data.id
+    	var hr = new XMLHttpRequest();
+    	var url = "/poporoink/controller/deletePhoto.php";
+	    var vars = "idPhotoData="+event.data.id ;
+	    hr.open("POST", url, true);
+	    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	    hr.onreadystatechange = function() {
+		    if(hr.readyState == 4 && hr.status == 200) {
+			    var return_data = hr.responseText;
+				document.getElementById("status").innerHTML = return_data;
+		    };
+	    };
+	   
+	    hr.send(vars); // Actually execute the request
+	    document.getElementById("status").innerHTML = "processing...";
+    	 /*var data = {
+                "idPhoto" : event.data.id
         };
-        console.log(data);
-        $.ajax({
+        console.log(data);*/
+        /*$.ajax({
 		    data: data,
 		    type: "POST",
+		    dataType: "json",
 		    url: 'controller/deletePhoto.php',
-		})
-		 .done(function( data, textStatus, jqXHR ) {
-		     /*if ( console && console.log ) {
-		         console.log( "La solicitud se ha completado correctamente." );
-		     }*/
-		 })
-		 .fail(function( jqXHR, textStatus, errorThrown ) {
-		     /*if ( console && console.log ) {
-		         console.log( "La solicitud a fallado: " +  textStatus);
-		     }*/
-		});
+		    success: function(data){
+               console.log('paso por aqui');
+		
+           },
+		});*/
+		
+		
     	
     };
 	
