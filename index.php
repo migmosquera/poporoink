@@ -33,6 +33,7 @@
 											<!--<li><a href="index.html">Home</a></li>
 											<li><a href="generic.html">Contactame</a></li>-->
 											<li><a href="photoGallery.php">Galeria</a></li>
+											<li><a href="#three">Contactame</a></li>
 											<li><a id="myBtn" href="login.php" style="cursor: pointer;">Login</a></li>
 										</ul>
 									</div>
@@ -82,7 +83,7 @@
 							<div class="containerButtons">
 								<a href="" style="text-decoration:none; ">
 									<div style="width: 99%; margin: 0 auto; height: 100%;">
-										<p class="textButtons">Escribe en nuestro Blog</p>
+										<p class="textButtons">Escribe en nuestro Muro</p>
 										<div id="imgBlog"></div>	
 									</div>
 								</a>
