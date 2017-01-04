@@ -12,12 +12,10 @@
 			$delete -> bindParam(':id', $id_photo);
 			$delete -> execute();
 			unlink('/opt/lampp/htdocs/'.$data['photo']);
+			echo "<meta http-equiv='refresh' content='0'>";
 			echo "La imagen ha sido borrada";
 		} else {
 			echo "No se ah eliminado la imagen";
-		}
-		
+		}	
 	}
-	
-	
 ?>
