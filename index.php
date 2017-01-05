@@ -162,31 +162,7 @@
 					</footer>
 
 			</div>
-			<!-- Modal -->
 			
-			  <!--<div id="myModal" class="modal">-->
-				  <!-- Modal content -->
-				  <!--<div class="modal-content">
-				    <div class="modal-header">
-				      <span id="closet" class="close">×</span>
-				      <h2>Login</h2>
-				    </div>
-				    <form action="controller/login.php" method="post" name="loginUser" accept-charset="utf-8">
-					    <div class="modal-body">
-					      	<p style="color: #000000; margin-bottom: 10px">Ingresa Usuario</p>
-					      	<input type="text"required="required" id="username" name="username" style="color: #000000" placeholder="Usuario"/>	
-					      	<p style="color: #000000; margin-bottom: 10px">Ingresa Clave</p>
-					    	<input type="password" required="required" id="password" name="password" style="color: #000000" placeholder="Clave"/>
-					    	<div id="errorMsj"><?php echo $errorMsj; ?></div>					    	
-					    </div>
-					    <div id="footer-modal" style="text-align: center; padding-bottom: 15px">
-						  	<input type="button" class="btn btn-danger" name="closeBtn" value="Cerrar" id="closeBtn"/>
-						  	<input type="submit" class="btn btn-success" name="closeBtn" value="Ingresar" id="closeBtn"/>
-						</div>
-					</form>
-					
-				  </div>
-			  </div>-->	  
 			
 		<!-- Scripts -->
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0YRxhZY0MuH2yz1dHp0-E3PH6UgISLcQ&callback=initMap"></script>
