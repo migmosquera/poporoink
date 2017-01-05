@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <?php 
-	require_once 'controller/showAllComent.php';
+	require 'controller/showAllComent.php';
 	require_once 'controller/createComent.php';
 ?>
 <html>
@@ -53,17 +53,40 @@
 				</header>
 				<section class="wrapper style5">
 					<div class="inner">
-						<form action="" id="formUpdateUser" name="formUpdateUser" method="post" accept-charset="utf-8" class="formUpdate">
+						<form action="controller/paginationComent.php" id="formUpdateUser" name="formUpdateUser" method="post" accept-charset="utf-8" class="formUpdate">
 							<div class="containerUser">
 								<div class="contentTitle">
 									<h4 class="titleUser">Mensajes</h4>  
 								</div>
-								<div id="containerPhotoAll">
-									<?php foreach($blog as $item): ?>
-										<div id="name">
-										  <?php echo $item['id'] ?>
-										</div>
-									<?php endforeach; ?>
+								<div id="containerBlogAll" name="containerBlogAll">
+									 <table >
+									    <tr>
+									      <td style="font-weight: 700">Nombre:</td>
+									      <td style="font-weight: 700">Comentario:</td>
+									    </tr>
+									    <?php foreach($blog as $item): ?>
+											<tr>
+										      <td style="width: 30%;"><?php echo $item['name'] ?></td>
+										      <td ><?php echo $item['coment'] ?></td>
+										    </tr>
+										<?php endforeach; ?>
+									</table>
+									
+									<?php 
+										if ($pagina != 1)
+      											echo '<a href="?pag='.($pagina-1).'"> < </a>';
+										for( $i = 0; $i < $pagination; $i++ ){
+										    $pagina_texto = $i + 1;
+											$clase="";
+											
+											if($pagina == $pagina_texto)
+	       										$clase = 'active';
+												echo '<a class="pagination ' .$clase. ' " href="?pag=' . $pagina_texto .  '">' . $pagina_texto . '</a>';
+											
+										}
+										if ($pagina != $pagination)
+      											echo '<a href="?pag='.($pagina+1).'"> > </a>';
+									?>
 								</div>
 								   			
 							</div>
@@ -78,6 +101,7 @@
 									<h4 class="titleUser">Datos de la Persona</h4>  
 								</div>
 								<p style="background-color: #DAECDE;width: 80%;  margin: 0 auto;"  ></p>
+								<p class="msj"><?php echo $msj ?></p>
 								<div id="containerLeft" class="subContainer">
 					
 									<p style="margin-bottom: 10px;">Nombre</p>
@@ -88,7 +112,7 @@
 								</div>
 								<div id="containerRight" class="subContainerRight">
 									<p style="margin-bottom: 10px;">Comentario</p>
-									<textarea class="inputClass"  name="coment" id="coment" required="required"></textarea>
+									<textarea class="inputClass"  name="coment" id="coment" required="required" maxlength="150"></textarea>
 									
 								</div>
 								<button type="submit" class="myButton" name="saveComent" id="saveComent" ><span>Enviar</span></button>

@@ -55,7 +55,7 @@ class Photo {
 	public static function allPhoto()
 	{
 		$conectar = new Conectar();
-		$query = $conectar -> prepare('SELECT * FROM ' . self::TABLA . ' ORDER BY date_photo' );
+		$query = $conectar -> prepare('SELECT * FROM ' . self::TABLA . ' ORDER BY date_photo DESC' );
 		$query -> execute();
 		$data = $query -> fetchAll();
 		return $data;

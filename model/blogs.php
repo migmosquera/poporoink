@@ -70,7 +70,17 @@ class Blog {
 	public static function allComent()
 	{
 		$conectar = new Conectar();
-		$query = $conectar -> prepare('SELECT * FROM ' . self::TABLA . '-ORDER BY date' );
+		$query = $conectar -> prepare('SELECT * FROM ' . self::TABLA . ' ORDER BY date DESC');
+		$query -> execute();
+		$data = $query -> fetchAll();
+		return $data;
+		$conectar = null;
+	}
+	
+	public static function paginationComent($limit,$total)
+	{
+		$conectar = new Conectar();
+		$query = $conectar -> prepare('SELECT * FROM ' . self::TABLA . ' ORDER BY date DESC LIMIT ' .$limit. ' , ' .$total);
 		$query -> execute();
 		$data = $query -> fetchAll();
 		return $data;

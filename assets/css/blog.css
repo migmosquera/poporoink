@@ -17,6 +17,13 @@
   	border-radius: 5px;
 }
 
+.pagination{
+	border: 1px solid #106396;
+    padding-left: 2px;
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
 .contentTitle{
 	height: 46px;
   	width: 70%;
@@ -28,10 +35,20 @@
   	text-align: center;
 }
 
+.active{
+	background-color: rgba(16, 99, 150, 0.31)
+}
+
 .titleUser{
 	display: table-cell;
   	vertical-align: middle;
   	font-weight: 400;
+}
+
+.msj{
+	background-color: #DAECDE;
+	width: 80%;  
+	margin: 0 auto;
 }
 
 .subContainer{
