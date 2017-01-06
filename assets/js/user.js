@@ -104,23 +104,6 @@ function Controller() {
 	   
 	    hr.send(vars); // Actually execute the request
 	    document.getElementById("status").innerHTML = "processing...";
-    	 /*var data = {
-                "idPhoto" : event.data.id
-        };
-        console.log(data);*/
-        /*$.ajax({
-		    data: data,
-		    type: "POST",
-		    dataType: "json",
-		    url: 'controller/deletePhoto.php',
-		    success: function(data){
-               console.log('paso por aqui');
-		
-           },
-		});*/
-		
-		
-    	
     };
 	
 }

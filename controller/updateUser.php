@@ -9,7 +9,7 @@
 		$phone = $_POST['phone'];
 		$facebook = $_POST['facebook'];
 		$instagram = $_POST['instagram'];
-		$instagram = $_POST['username'];
+		$username = $_POST['username'];
 		$user->setName($name);
 		$user->setEmail($email);
 		$user->setPhone($phone);
