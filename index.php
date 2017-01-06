@@ -157,7 +157,7 @@
 							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>-->
 						</ul>
 						<ul class="copyright">
-							<li>&copy; En modo de Prueba</li><li>Disenado: por su Hermano</li>
+							<li>&copy; Creada por:</li><li><a href="contactMe.php" style="border-bottom: 0px"> Miguel Mosquera </a></li>
 						</ul>
 					</footer>
 
