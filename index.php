@@ -51,7 +51,7 @@
 								<h2>Poporo Ink</h2>
 								<p>Bienvenidos a Poporo Ink<br />
 								Un lugar para que conozcas mi trabajo<br />
-								<a href="<?php echo $user->getUrlInstagram() ?>" target="_blank">Visita mi instagram</a>.</p>
+								<a style="border-bottom: 0;" href="<?php echo $user->getUrlInstagram() ?>" target="_blank">Visita mi instagram</a>.</p>
 							</div>
 							<a href="#two" class="more scrolly">Conoceme</a>
 					</section>

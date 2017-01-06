@@ -24,9 +24,9 @@
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<!--<li><a href="index.html">Home</a></li>
-											<li><a href="generic.html">Contactame</a></li>-->
 											<li><a href="index.php">Home</a></li>
+											<li><a href="blog.php">Blog</a></li>
+											<li><a href="index.php#three">Contactame</a></li>
 											<li><a id="myBtn" href="login.php" style="cursor: pointer;">Login</a></li>
 										</ul>
 									</div>

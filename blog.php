@@ -74,7 +74,7 @@
 									
 									<?php 
 										if ($pagina != 1)
-      											echo '<a href="?pag='.($pagina-1).'"> < </a>';
+      											echo '<a style="border-bottom: 0" href="?pag='.($pagina-1).'"> < </a>';
 										for( $i = 0; $i < $pagination; $i++ ){
 										    $pagina_texto = $i + 1;
 											$clase="";
@@ -85,7 +85,7 @@
 											
 										}
 										if ($pagina != $pagination)
-      											echo '<a href="?pag='.($pagina+1).'"> > </a>';
+      											echo '<a style="border-bottom: 0" href="?pag='.($pagina+1).'"> > </a>';
 									?>
 								</div>
 								   			
