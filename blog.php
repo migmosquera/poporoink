@@ -58,7 +58,7 @@
 								<div class="contentTitle">
 									<h4 class="titleUser">Mensajes</h4>  
 								</div>
-								<div id="containerBlogAll" name="containerBlogAll">
+								<div id="containerBlogAll" name="containerBlogAll" style="overflow-x: auto;">
 									 <table >
 									    <tr>
 									      <td style="font-weight: 700">Nombre:</td>
