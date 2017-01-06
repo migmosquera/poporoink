@@ -98,16 +98,16 @@ class Users {
 		$conectar = null;
 	}
 
-	public function update($id) {
+	public function update($id,$name,$email,$photo,$facebook,$instagram,$username) {
 		$conectar = new Conectar();
 		
 		$query = $conectar -> prepare('UPDATE users SET name = :name, email = :email, url_instagram = :url_instagram, url_facebook = :url_facebook, phone = :phone, username = :username WHERE id = :id');
-		$query -> bindParam(':name', $this->getName());
-		$query -> bindParam(':email', $this->getEmail());
-		$query -> bindParam(':url_instagram', $this->getUrlInstagram());
-		$query -> bindParam(':url_facebook', $this->getUrl_facebook());
-		$query -> bindParam(':phone', $this->getPhone());
-		$query -> bindParam(':username', $this->getUsername());
+		$query -> bindParam(':name', $name);
+		$query -> bindParam(':email', $email);
+		$query -> bindParam(':url_instagram', $instagram);
+		$query -> bindParam(':url_facebook', $facebook);
+		$query -> bindParam(':phone', $photo);
+		$query -> bindParam(':username', $username);
 		$query -> bindParam(':id', $id);
 		$query -> execute();
 		return 'el usuario se a modificado';

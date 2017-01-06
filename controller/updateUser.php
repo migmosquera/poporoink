@@ -4,12 +4,18 @@
     	
 		require_once 'model/user.php';
 		$id = $_POST['id'];
-		$user->setName($_POST['name']);
-		$user->setEmail($_POST['email']);
-		$user->setPhone($_POST['phone']);
-		$user->setUrl_facebook($_POST['facebook']);
-		$user->setUrlInstagram($_POST['instagram']);
-		$user->update($id);
+		$name = $_POST['name'];
+		$email = $_POST['email'];
+		$phone = $_POST['phone'];
+		$facebook = $_POST['facebook'];
+		$instagram = $_POST['instagram'];
+		$instagram = $_POST['username'];
+		$user->setName($name);
+		$user->setEmail($email);
+		$user->setPhone($phone);
+		$user->setUrl_facebook($facebook);
+		$user->setUrlInstagram($instagram);
+		$user->update($id,$name,$email,$phone,$facebook,$instagram,$username);
 		$msj = 'El usuario se a modificado';
 		return $msj;
 	}

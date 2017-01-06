@@ -2,12 +2,13 @@
  	$msjPhoto = '';
 	if(isset($_POST['fileUpload'])) {
 		include_once "model/photo.php";
+		$temp = tmpfile();
 		$dir_subida = '/opt/lampp/htdocs/poporoink/imagenes/';
-		$target_file = $dir_subida . basename($_FILES["fileToUpload"]["name"]);
+		$target_file = $dir_subida . basename($_FILES["fileToUpload"]["tmp_name"]);
 		$idUser = $_POST['id'];
 		if (move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $target_file)) {
 			$msjPhoto = 'la imagen se a subido';
-			$photo_url = '/poporoink/imagenes/'.basename($_FILES["fileToUpload"]["name"]);
+			$photo_url = '/poporoink/imagenes/'.basename($_FILES["fileToUpload"]["tmp_name"]);
 		   	$photo= Photo::registerPhoto($photo_url, $idUser);
 			return $msjPhoto;
 		} else {
