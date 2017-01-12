@@ -1,7 +1,8 @@
 <?php
+	$msjSendEmail = "";
     if(isset($_POST['sendEmail'])){
+    	require_once 'controller/email/PHPMailerAutoload.php';
     	require_once 'controller/email/class.phpmailer.php';
-    	
     	$name = $_POST['name'];
 		$email = $_POST['email'];
 		$msjEmail = $_POST['msjEmail'];
@@ -16,12 +17,12 @@
 		$correo->Password = "syslife12*";
 		$correo->setFrom("administrador@poporoink.com.ve");
 		$correo->addAddress('migmosquera2303@gmail.com');
-		$correo->Subject = "Mi primero correo con PHPMailer";
-		$correo->MsgHTML("Mi Mensaje en <strong>HTML</strong>");
+		$correo->Subject = "correo enviado por '.$name.'";
+		$correo->MsgHTML("<strong>Mensaje enviado por el usuario:</strong> $name </br> <strong>Email:</strong> $email  </br> <strong>Mensaje:</strong> $msjEmail  ");
 		if(!$correo->Send()) {
-		  echo "Hubo un error: " . $correo->ErrorInfo;
+		  $msjSendEmail = "Hubo un error: " . $correo->ErrorInfo;
 		} else {
-		  echo "Mensaje enviado con exito.";
+		  $msjSendEmail = "Mensaje enviado con exito.";
 		}
     }
 ?>

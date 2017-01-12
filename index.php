@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <?php
 	require_once  'controller/controllerUsers.php';
+	require_once  'controller/sendEmail.php';
 ?>
 <html>
 	<head>
@@ -113,7 +114,7 @@
 					</section>
 
 				<!-- Three -->
-					<section id="three" class="wrapper style3 special">
+					<section id="three" class="wrapper style3 special contactMeIndex">
 						<div class="inner">
 							<header class="major" style="margin-bottom: 0">
 								<h2>Contactame a traves</h2>
@@ -142,6 +143,17 @@
 										<div class="googleMaps" id="map"></div>
 									</div>
 									
+								</div>
+								<div class="containerSocialText">
+								  	<p class="titleSocial">Contactame</p>
+								  	<form action="" method="post" accept-charset="utf-8">
+										<input class="inputSendEmail"  type="text" name="name" value="" placeholder="Ingresa tu nombre" id="name"/>
+										<input class="inputSendEmail" type="text" name="email" value="" placeholder="Ingresa tu Email" id="email"/>
+										<textarea placeholder="Comentario" class="textAreaSendEmail" name="msjEmail" id="msjEmail" rows="8" cols="40"  ></textarea>
+										<p style="color: #B2E2B4; margin-bottom: 0px; padding-top: 5px; padding-bottom: 5px; "><?php echo $msjSendEmail ?></p>
+										<button type="submit" id="sendEmail" name="sendEmail" class="buttonLimpiar">Enviar</button>
+									  </form>
+								  	
 								</div>
 							</div>
 						</div>
