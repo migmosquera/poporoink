@@ -1,0 +1,29 @@
+<?php
+    $welcome='Bienvenidos a Poporo Ink';
+    $work='Un lugar para que conozcas mi trabajo';    
+	$visit_instagram = 'visita mi instagram';
+	$gallery = 'Galeria';
+	$conoceme = 'Conoceme';
+	$mision = 'Nos especializamos en imprimir tus ideas en cualquier parte de tu cuerpo, realizamos tatuajes de colores y en negro. Si deseas un Tattoo nosotros somos los indicados';
+	$parrafo1 = 'Cuando hablamos de diseños de tatuajes y estilos PoporoInk es lo que buscas.';
+	$parrafo2 = 'Te invito a que veas nuestro trabajo de calidad observando nuestra galeria de tatuajes y observaras tatuajes de calidad, profesionalidad  e higiene';
+	$visit_gallery = 'Visita la Galeria de Tatuajes';
+	$visit_blog = 'Escribe en nuestro Muro';
+	$contactame = 'Contactame';
+	$last_tattoo = 'Mis ultimos Tatuajes';
+	$contact_me = 'Contactame a traves';
+	$contact_me_redes = 'Visita mis redes sociales';
+	$ubicanos = 'Ubicanos';
+	$enviar = 'Enviar';
+	$celular = 'Celular';
+	$email = 'Email';
+	$btnLanguage = 'Ingles';
+	$inputLanguage = 'en';
+	$tatuajes = 'Tatuajes';
+	$galeria_foto = 'Galeria de Fotos';
+	$escribe_muro = 'Escribe en Nuestra Pared';
+	$msj_blog = 'Mensajes';
+	$nombre = 'Nombre';
+	$comentario = 'Comentario';
+	$dato_persona = 'Datos de la Persona'; 
+?>

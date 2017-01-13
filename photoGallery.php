@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <?php
+	session_start();
 	include_once 'controller/showAllPhoto.php';
+	require_once  'controller/changeLanguage.php';
 ?>
 <html>
 	<head>
@@ -26,7 +28,7 @@
 										<ul>
 											<li><a href="index.php">Home</a></li>
 											<li><a href="blog.php">Blog</a></li>
-											<li><a href="index.php#three">Contactame</a></li>
+											<li><a href="index.php#three"><?php echo $contactame ?></a></li>
 											<li><a id="myBtn" href="login.php" style="cursor: pointer;">Login</a></li>
 										</ul>
 									</div>
@@ -38,14 +40,14 @@
 				<!-- Main -->
 					<article id="main">
 						<header>
-							<p>Galeria de fotos</p>
+							<p><?php echo $galeria_foto ?></p>
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
 								<form action="" method="post" enctype="multipart/form-data" class="formUpdate">
 									<div  class="containerUser">
 										<div class="contentTitle">
-											<h4 class="titleUser">Fotos</h4> 
+											<h4 class="titleUser"><?php echo $tatuajes ?></h4> 
 										</div>	
 										<div id="containerPhotoAll">
 											 <?php foreach($photo as $item): ?>
@@ -67,6 +69,15 @@
 					</article>
 
 			</div>
+			<footer id="footer">
+				
+				<form action="" method="post" accept-charset="utf-8">
+							
+					<input type="hidden" name="language" value="<?php echo $inputLanguage ?>" id="language"/>
+					<button id="buttonChangeLanguage" class="buttonChangeLanguage" type="submit" value="btnLenguage"><?php if($lang=='en')  { ?> <p class="nameChangeLanguage">Español</p>  <img src="assets/images/spain.png" alt="" /><?php } else { ?> <p class="nameChangeLanguage" >English</p>  <img src="assets/images/usa.png" alt="" /><?php } ?></button>
+				</form>
+						
+			</footer>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

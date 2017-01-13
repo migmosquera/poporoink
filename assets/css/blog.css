@@ -17,6 +17,23 @@
   	border-radius: 5px;
 }
 
+.buttonChangeLanguage{
+	border: 0 !important;
+    background: 0 !important;
+    width: 100% !important;
+    display: block !important;
+    text-align: right !important;
+    padding-right: 50px !important;
+    cursor: pointer !important;
+}
+
+.nameChangeLanguage{
+	color: #ffffff !important;
+    font-size: 15px !important;
+    display: inline-block !important;
+    margin-right: 8px !important;
+}
+
 .pagination{
 	border: 1px solid #106396;
     padding-left: 2px;

@@ -2,6 +2,7 @@
 <?php 
 	require 'controller/showAllComent.php';
 	require_once 'controller/createComent.php';
+	require_once  'controller/changeLanguage.php';
 ?>
 <html>
 	<head>
@@ -29,10 +30,10 @@
 										<a href="index.php">Home</a>
 									</li>
 									<li>
-										<a href="photoGallery.php">Galeria</a>
+										<a href="photoGallery.php"><?php echo $gallery ?></a>
 									</li>
 									<li>
-										<a href="index.php#three">Contactame</a>
+										<a href="index.php#three"><?php echo $contactame ?></a>
 									</li>
 									<li>
 										<a id="myBtn" href="login.php" style="cursor: pointer;">Login</a>
@@ -48,7 +49,7 @@
 			<article id="main">
 				<header>
 					<p>
-						Escribe en Nuestro Muro
+						<?php echo $escribe_muro ?>
 					</p>
 				</header>
 				<section class="wrapper style5">
@@ -56,13 +57,13 @@
 						<form action="controller/paginationComent.php" id="formUpdateUser" name="formUpdateUser" method="post" accept-charset="utf-8" class="formUpdate">
 							<div class="containerUser">
 								<div class="contentTitle">
-									<h4 class="titleUser">Mensajes</h4>  
+									<h4 class="titleUser"><?php echo $msj_blog ?></h4>  
 								</div>
 								<div id="containerBlogAll" name="containerBlogAll" style="overflow-x: auto;">
 									 <table >
 									    <tr>
-									      <td style="font-weight: 700">Nombre:</td>
-									      <td style="font-weight: 700">Comentario:</td>
+									      <td style="font-weight: 700"><?php echo $nombre ?>:</td>
+									      <td style="font-weight: 700"><?php echo $comentario ?>:</td>
 									    </tr>
 									    <?php foreach($blog as $item): ?>
 											<tr>
@@ -98,24 +99,24 @@
 						<form action="" id="formUpdateUser" name="formUpdateUser" method="post" accept-charset="utf-8" class="formUpdate">
 							<div class="containerUser">
 								<div class="contentTitle">
-									<h4 class="titleUser">Datos de la Persona</h4>  
+									<h4 class="titleUser"><?php echo $dato_persona ?></h4>  
 								</div>
 								<p style="background-color: #DAECDE;width: 80%;  margin: 0 auto;"  ></p>
 								<p class="msj"><?php echo $msj ?></p>
 								<div id="containerLeft" class="subContainer">
 					
-									<p style="margin-bottom: 10px;">Nombre</p>
+									<p style="margin-bottom: 10px;"><?php echo $nombre ?></p>
 									<input style="color: #000000;margin-bottom: 20px;" type="text" name="name" value="" id="name" required="required" />
-									<p style="margin-bottom: 10px;">Email</p>
+									<p style="margin-bottom: 10px;"><?php echo $email ?></p>
 									<input style="color: #000000;margin-bottom: 20px;" type="text" name="email" value="" id="email" required="required" />
 									
 								</div>
 								<div id="containerRight" class="subContainerRight">
-									<p style="margin-bottom: 10px;">Comentario</p>
+									<p style="margin-bottom: 10px;"><?php echo $comentario ?></p>
 									<textarea class="inputClass"  name="coment" id="coment" required="required" maxlength="150"></textarea>
 									
 								</div>
-								<button type="submit" class="myButton" name="saveComent" id="saveComent" ><span>Enviar</span></button>
+								<button type="submit" class="myButton" name="saveComent" id="saveComent" ><span><?php echo $enviar ?></span></button>
 								   			
 							</div>
 						</form>
@@ -124,6 +125,15 @@
 			</article>
 
 		</div>
+		<footer id="footer">
+				
+				<form action="" method="post" accept-charset="utf-8">
+							
+					<input type="hidden" name="language" value="<?php echo $inputLanguage ?>" id="language"/>
+					<button id="buttonChangeLanguage" class="buttonChangeLanguage" type="submit" value="btnLenguage"><?php if($lang=='en')  { ?> <p class="nameChangeLanguage">Español</p>  <img src="assets/images/spain.png" alt="" /><?php } else { ?> <p class="nameChangeLanguage" >English</p>  <img src="assets/images/usa.png" alt="" /><?php } ?></button>
+				</form>
+						
+		</footer>
 
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>

@@ -25,6 +25,21 @@
 	display:none
 }
 
+.buttonChangeLanguage{
+	border: 0;
+    background: 0;
+    width: 100%;
+    text-align: right;
+    padding-right: 55px;
+}
+
+.nameChangeLanguage{
+	margin-bottom: 0; 
+	display: inline-block;
+	 font-size: 15px;
+	  margin-right: 7px;
+}
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
