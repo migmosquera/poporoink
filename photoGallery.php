@@ -9,6 +9,7 @@
 		<title>User</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/prettyPhoto.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/phptoGallery.css" />	
 	</head>
@@ -52,13 +53,11 @@
 										<div id="containerPhotoAll">
 											 <?php foreach($photo as $item): ?>
 												<div id="containerPhoto_<?php echo $item['id'] ?>" class="containerPhoto">
-											       	<img id="imagenUser_<?php echo $item['id'] ?>" class="imagenUser" src=" <?php echo $item['photo'] ?>" alt="" />
-											       	<div id="containerMsjBorrar_<?php echo $item['id'] ?>" style="height:210px; max-width: 200px;border: 1px solid #74AD83; border-radius: 5px;" class="labelHide" >
-											       		<p style=" max-width: 200px; margin: 0">Deseas Elminiar la Imagen</p>
-											       		<button class="buttonYEsDeletePhoto" type="button" name="<?php echo $item['id'] ?>" id="deletePhoto_<?php echo $item['id'] ?>" ><span>Si</span></button>
-											       		<p class="buttonNotDeletePhoto" name="notDeletePhoto" id="notDeletePhoto" >No</button>
-											       		<input type="hidden" name="id" value="<?php echo $item['id'] ?>" id="id"/>		
-											       	</div>
+													 <a href=" <?php echo $item['photo'] ?>" rel="prettyPhoto">
+											              <img src=" <?php echo $item['photo'] ?>" class="img-imagenUser" style="max-height: 207px;"> 
+											        </a>
+											       	<!--<img id="imagenUser_<?php echo $item['id'] ?>" class="imagenUser" src=" <?php echo $item['photo'] ?>" alt="" />-->
+											       	
 											    </div>
 											<?php endforeach; ?>
 										</div>
@@ -81,8 +80,10 @@
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/bootstrap.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.prettyPhoto.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/photoGallery.js"></script>
 			<script src="assets/js/util.js"></script>

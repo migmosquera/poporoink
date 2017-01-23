@@ -25,9 +25,14 @@ function View() {
         var imagen = document.getElementsByTagName("img");
         $(imagen).removeClass('imagenUser');
         $(imagen).addClass('imagenUSerMobil');
- 
+ 		
+    }else{
+    	$("a[rel^='prettyPhoto']").prettyPhoto({
+			social_tools: false
+		});		
+	
     }
-
+	
 	
 }
 
