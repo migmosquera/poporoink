@@ -9,7 +9,8 @@
 	<head>
 		<title>Poporo Ink</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="tatuajes" content="pagina de tatuajes en venezuela" />
+		<meta name="robots" content="tatuajes, venezuela, valencia, carabobo">
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/css/main.css" />
